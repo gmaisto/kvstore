@@ -109,15 +109,8 @@ type Options struct {
 	// Multiple processes can open the same Badger DB.
 	// Optional (false by default).
 	ReadOnly bool
-	// Truncate indicates whether value log files should be truncated to delete corrupt data, if any.
-	// This option is ignored when ReadOnly or InMemory is true.
-	// Optional (false by default).
-	Truncate bool
-	// This value specifies how much data cache should hold in memory. A small size of cache means lower
-	// memory consumption and lookups/iterations would take longer. Setting size to zero disables the
-	// cache altogether.
-	// Optional (1 GB by default).
-	MaxCacheSize int64
+	// Specify the logger implementation to use
+	Logger badger.Logger
 
 	// Encryption related options.
 
@@ -142,8 +135,6 @@ var DefaultOptions = Options{
 	InMemory:                      false,
 	SyncWrites:                    false,
 	ReadOnly:                      false,
-	Truncate:                      false,
-	MaxCacheSize:                  1 << 30, // 1 GiB, or 2^30 bytes
 	EncryptionKey:                 []byte{},
 	EncryptionKeyRotationDuration: 10 * 24 * time.Hour, // Default 10 days.
 	Codec:                         encoding.JSON,
@@ -164,8 +155,8 @@ func NewStore(options Options) (Store, error) {
 	if options.Codec == nil {
 		options.Codec = DefaultOptions.Codec
 	}
-	if options.MaxCacheSize == 0 {
-		options.MaxCacheSize = DefaultOptions.MaxCacheSize
+	if options.Logger == nil {
+		options.Logger = DefaultOptions.Logger
 	}
 	if options.EncryptionKey == nil {
 		options.EncryptionKey = DefaultOptions.EncryptionKey
@@ -180,6 +171,7 @@ func NewStore(options Options) (Store, error) {
 		WithInMemory(options.InMemory).
 		WithSyncWrites(options.SyncWrites).
 		WithReadOnly(options.ReadOnly).
+		WithLogger(options.Logger).
 		WithEncryptionKey(options.EncryptionKey).
 		WithEncryptionKeyRotationDuration(options.EncryptionKeyRotationDuration)
 	db, err := badger.Open(opts)
