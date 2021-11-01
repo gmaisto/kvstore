@@ -3,7 +3,7 @@ package badgerdb
 import (
 	"time"
 
-	"github.com/dgraph-io/badger/v3"
+	badger "github.com/dgraph-io/badger/v3"
 	"github.com/gmaisto/kvstore/encoding"
 	"github.com/gmaisto/kvstore/util"
 )
@@ -180,7 +180,6 @@ func NewStore(options Options) (Store, error) {
 		WithInMemory(options.InMemory).
 		WithSyncWrites(options.SyncWrites).
 		WithReadOnly(options.ReadOnly).
-		WithTruncate(options.Truncate).
 		WithMaxCacheSize(options.MaxCacheSize).
 		WithEncryptionKey(options.EncryptionKey).
 		WithEncryptionKeyRotationDuration(options.EncryptionKeyRotationDuration)
