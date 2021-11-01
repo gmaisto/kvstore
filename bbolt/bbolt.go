@@ -3,8 +3,8 @@ package bbolt
 import (
 	bolt "go.etcd.io/bbolt"
 
-	"github.com/philippgille/gokv/encoding"
-	"github.com/philippgille/gokv/util"
+	"github.com/gmaisto/kvstore/encoding"
+	"github.com/gmaisto/kvstore/util"
 )
 
 // Store is a gokv.Store implementation for bbolt (formerly known as Bolt / Bolt DB).
