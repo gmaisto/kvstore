@@ -1,3 +1,5 @@
+github.com/gmaisto/kvstore/util v0.0.0-20211101103153-eca218caf5ee h1:HBM3eIq7oaXu1dH9uhL9Y+bW6qZtozvr+fuqx53gKLY=
+github.com/gmaisto/kvstore/util v0.0.0-20211101103153-eca218caf5ee/go.mod h1:RBR+1s2GYaiKvaS/2IQBjT9gwy7aSsmEsvompNVTLDI=
 github.com/go-test/deep v1.0.4 h1:u2CU3YKy9I2pmu9pX0eq50wCgjfGIt539SqR7FbHiho=
 github.com/go-test/deep v1.0.4/go.mod h1:wGDj63lr65AM2AQyKZd/NYHGb0R+1RLqB8NKt3aSFNA=
 github.com/philippgille/gokv v0.0.0-20191001201555-5ac9a20de634/go.mod h1:OCoWPt+mbYuTO1FUVrQ2SxQU0oaaHBsn6lRhFX3JHOc=

@@ -15,5 +15,5 @@ var (
 	// Gob is a GobCodec that encodes/decodes Go values to/from gob.
 	Gob = GobCodec{}
 	// MsgPack is a MsgPackCodec that encodes/decodes Go values to/from MsgPack.
-	MsgPack = MasgPackCodec{}
+	MsgPack = MsgPackCodec{}
 )
