@@ -180,7 +180,6 @@ func NewStore(options Options) (Store, error) {
 		WithInMemory(options.InMemory).
 		WithSyncWrites(options.SyncWrites).
 		WithReadOnly(options.ReadOnly).
-		WithMaxCacheSize(options.MaxCacheSize).
 		WithEncryptionKey(options.EncryptionKey).
 		WithEncryptionKeyRotationDuration(options.EncryptionKeyRotationDuration)
 	db, err := badger.Open(opts)
