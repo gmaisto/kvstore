@@ -1,7 +1,7 @@
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=
-github.com/gmaisto/kvstore/encoding v0.0.0-20211101102247-3010ea152561 h1:cFizoZLZ0Jrls5Qs6sSn6X8lKxBd5PfvdKhY6sEcvO8=
-github.com/gmaisto/kvstore/encoding v0.0.0-20211101102247-3010ea152561/go.mod h1:dPRY2bdVdnRwBK2RHd6yVQJ7SdoWAVAIzCSVHJ6uG7Y=
+github.com/gmaisto/kvstore/encoding v0.0.0-20211101104155-7ea5a7dfb045 h1:UXst57UHJXDNftSuRV07iA0oF3aXva2bWDBBb9M/ydE=
+github.com/gmaisto/kvstore/encoding v0.0.0-20211101104155-7ea5a7dfb045/go.mod h1:dPRY2bdVdnRwBK2RHd6yVQJ7SdoWAVAIzCSVHJ6uG7Y=
 github.com/gmaisto/kvstore/test v0.0.0-20211101103153-eca218caf5ee h1:1pr5zCjFer3400VqszALvjt7Msvl0iZaElDX4BEGM4Y=
 github.com/gmaisto/kvstore/test v0.0.0-20211101103153-eca218caf5ee/go.mod h1:qVhqYy96m1g0fS88/oxMBc0rfVSxnNAvSJQDLgTSbQ0=
 github.com/gmaisto/kvstore/util v0.0.0-20211101103153-eca218caf5ee h1:HBM3eIq7oaXu1dH9uhL9Y+bW6qZtozvr+fuqx53gKLY=
