@@ -149,7 +149,7 @@ func createStore(t *testing.T, codec encoding.Codec) (file.Store, string) {
 	options := file.Options{
 		Directory: path,
 		// Setting no FileNameEnding leads to all Codecs writing ".json" files,
-		// but that doesn't matter to the functionality of gokv.
+		// but that doesn't matter to the functionality of kvstore.
 		Codec: codec,
 	}
 	store, err := file.NewStore(options)
@@ -160,7 +160,7 @@ func createStore(t *testing.T, codec encoding.Codec) (file.Store, string) {
 }
 
 func generateRandomTempDBpath(t *testing.T) string {
-	path, err := ioutil.TempDir(os.TempDir(), "gokv")
+	path, err := ioutil.TempDir(os.TempDir(), "kvstore")
 	if err != nil {
 		t.Fatalf("Generating random DB path failed: %v", err)
 	}
@@ -169,7 +169,7 @@ func generateRandomTempDBpath(t *testing.T) string {
 
 // cleanUp cleans up the store (deletes the files that have been created during a test).
 // If an error occurs the test is NOT marked as failed.
-func cleanUp(store gokv.Store, path string) {
+func cleanUp(store kvstore.Store, path string) {
 	err := store.Close()
 	if err != nil {
 		log.Printf("Error during cleaning up after a test (during closing the store): %v\n", err)

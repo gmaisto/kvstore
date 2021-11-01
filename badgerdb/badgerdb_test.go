@@ -192,7 +192,7 @@ func generateRandomTempDBpath(t *testing.T) string {
 
 // cleanUp cleans up (deletes) the database files that have been created during a test.
 // If an error occurs the test is NOT marked as failed.
-func cleanUp(store gokv.Store, path string) {
+func cleanUp(store kvstore.Store, path string) {
 	err := store.Close()
 	if err != nil {
 		log.Printf("Error during cleaning up after a test (during closing the store): %v\n", err)
